@@ -5,8 +5,8 @@ const Schema = mongoose.Schema;
 //require luxon for date/time format
 const { DateTime } = require("luxon");
 
-//create post schema
-const PostSchema = new Schema({
+//create article schema
+const ArticleSchema = new Schema({
     title: {
         type: String,
         required: true,
@@ -15,18 +15,18 @@ const PostSchema = new Schema({
         type: Date,
         default: Date.now,
     },
-    post_text: {
+    article_text: {
         type: String,
         required: true,
     },
 });
 
-PostSchema.virtual("url").get(function () {
-    return `/routers/post/${this._id}`;
+ArticleSchema.virtual("url").get(function () {
+    return `/routers/article/${this._id}`;
 })
 
-PostSchema.virtual("timestamp_formatted").get(function () {
+ArticleSchema.virtual("timestamp_formatted").get(function () {
     return DateTime.fromJSDate(this.timestamp).toLocaleString(DateTime.DATETIME_SHORT);
 })
 
-module.exports = mongoose.model("Post", PostSchema);
+module.exports = mongoose.model("Article", ArticleSchema);

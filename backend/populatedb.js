@@ -4,11 +4,11 @@ const userArgs = process.argv.slice(2);
 //require models
 const User = require("./models/user");
 const Comment = require("./models/comment");
-const Post = require("models/post");
+const Article = require("models/article");
 
 const users = [];
 const comments = [];
-const posts = []
+const articles = []
 
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
@@ -23,7 +23,7 @@ async function main() {
     console.log("Debug: Should be connected?");
     await getUsers();
     await getComments();
-    await getPosts();
+    await getArticles();
     console.log("Debug: Closing mongoose");
     mongoose.connection.close();
 }
@@ -44,18 +44,18 @@ async function userCreate(username, password, member, admin) {
     console.log(`Added User: ${user}`);
 }
 
-async function postCreate(title, timestamp, post_text) {
-    const messageDetail = {
+async function articleCreate(title, timestamp, post_text) {
+    const articleDetail = {
         title: title,
         timestamp: timestamp,
         post_text: post_text,
     };
 
-    const post = new Post(postDetail);
+    const article = new Article(articleDetail);
 
-    await post.save();
-    post[index]= post
-    console.log(`Added Post: ${post}`)
+    await article.save();
+    article[index]= article
+    console.log(`Added Article: ${article}`)
 }
 
 async function commentCreate(user, timestamp, comment_text) {
@@ -79,10 +79,10 @@ async function getUsers() {
     ])
 }
 
-async function getPosts() {
-    console.log("Adding Posts")
+async function getArticles() {
+    console.log("Adding Articles")
     await Promise.all([
-        postCreate()
+        articleCreate()
     ])
 }
 
