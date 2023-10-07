@@ -25,11 +25,4 @@ router.delete("/article/:id", article_controller.article_delete)
 
 
 
-// router.post("/articles", (req, res) => {
-//     console.log(req.body)
-//     res.json({today: true})
-// })
-
-
-
 module.exports = router;
