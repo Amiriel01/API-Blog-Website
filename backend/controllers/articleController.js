@@ -19,11 +19,6 @@ exports.article_detail = asyncHandler(async (req, res, next) => {
     res.json(articleDetail)
 });
 
-//display article create form on GET(Do I need this?)
-// exports.article_create_get = asyncHandler(async (req, res, next) => {
-//     res.json("article_create");
-// })
-
 //handle article create on POST
 exports.article_create_post = [
     //validate and sanitize fields
@@ -61,16 +56,14 @@ exports.article_create_post = [
     })
 ]
 
-//update article GET
-exports.article_update_get = asyncHandler(async (req, res, next) => {
-    const article = await Article.findById(req.body.id).exec();
+// //update article GET. Do not need
+// exports.article_update = asyncHandler(async (req, res, next) => {
+//     const articleUpdate = await Article.findById(req.body._id).exec();
+//     console.log(articleUpdate)
+//     res.json(articleUpdate)
+// });
 
-    res.json("article_update", {
-        article: article,
-    })
-})
-
-exports.article_update_post = [
+exports.article_update = [
     //validate and sanitize fields
     body("title", "Title cannot be blank")
         .trim()
@@ -101,9 +94,10 @@ exports.article_update_post = [
             });
             return;
         } else {
+            //
+            const articleDetail = await Article.findByIdAndUpdate(req.body._id, {title: req.body.title}, {article_text: req.body.article_text}).exec()
             //data from form is valid, save article
-            article = await Article.findByIdAndUpdate(req.body.id);
-            return res.json('/article_detail')
+            return res.json(articleDetail)
         }
     }),
 ];
