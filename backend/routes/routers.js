@@ -17,9 +17,11 @@ router.post("/article", article_controller.article_create_post)
 //article detail page for each article
 router.get("/article/:id", article_controller.article_detail)
 
-//article update POST
+//article update PUT
 router.put("/article/:id", article_controller.article_update)
 
+//article update DELETE
+router.delete("/article/:id", article_controller.article_delete)
 
 
 

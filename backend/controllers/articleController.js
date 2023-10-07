@@ -95,15 +95,14 @@ exports.article_update = [
             return;
         } else {
             //
-            const articleDetail = await Article.findByIdAndUpdate(req.body._id, {title: req.body.title}, {article_text: req.body.article_text}).exec()
+            const articleUpdate = await Article.findByIdAndUpdate(req.body._id, {title: req.body.title}, {article_text: req.body.article_text}).exec()
             //data from form is valid, save article
-            return res.json(articleDetail)
+            return res.json(articleUpdate)
         }
     }),
 ];
 
-exports.article_delete_post = async (req, res, next) => {
-    const articleId = await Article.findById(req.body.id).exec();
-    await Article.findByIdAndRemove(req.body.articleId);
-    res.json('/');
+exports.article_delete = async (req, res, next) => {
+    const articleDelete = await Article.findByIdAndRemove(req.body._id).exec();
+    res.json(articleDelete);
 }
