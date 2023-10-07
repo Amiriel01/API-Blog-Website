@@ -2,15 +2,17 @@ const User = require("../models/user");
 const asyncHandler = require("express-async-handler");
 const Article = require("../models/article");
 const { body, validationResult } = require("express-validator");
-const Article = require("../models/article");
 
-//display a list of all articles for admin view
+
+//display a list of all articles 
 exports.article_list = asyncHandler(async (req, res, next) => {
-    const articleList = await Article.find().populate().exec()
+    const articleList = await Article.find().exec()
 
-    res.json("article_list", {
-        article_list: articleList
-    });
+    // res.json("article_list", {
+    //     article_list: articleList
+    // });
+
+    res.json(articleList)
 });
 
 //display details for each article for user view
@@ -25,9 +27,9 @@ exports.article_detail = asyncHandler(async (req, res, next) => {
 });
 
 //display article create form on GET(Do I need this?)
-exports.article_create_get = asyncHandler(async (req, res, next) => {
-    res.json("article_create");
-})
+// exports.article_create_get = asyncHandler(async (req, res, next) => {
+//     res.json("article_create");
+// })
 
 //handle article create on POST
 exports.article_create_post = [
@@ -61,8 +63,7 @@ exports.article_create_post = [
             return;
         } else {
             //data from form is valid, save article
-            await article.save();
-            res.json('/')
+            res.json(await article.save())
         }
     })
 ]
@@ -114,7 +115,7 @@ exports.article_update_post = [
     }),
 ];
 
-exports.article_delete_post = asycn (req, res, next) => {
+exports.article_delete_post = async (req, res, next) => {
     const articleId = await Article.findById(req.body.id).exec();
     await Article.findByIdAndRemove(req.body.articleId);
     res.json('/');
