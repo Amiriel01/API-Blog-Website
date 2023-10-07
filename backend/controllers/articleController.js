@@ -8,22 +8,15 @@ const { body, validationResult } = require("express-validator");
 exports.article_list = asyncHandler(async (req, res, next) => {
     const articleList = await Article.find().exec()
 
-    // res.json("article_list", {
-    //     article_list: articleList
-    // });
-
     res.json(articleList)
 });
 
 //display details for each article for user view
 exports.article_detail = asyncHandler(async (req, res, next) => {
-    const article = await Article.findById(req.body.id).populate().exec()
-
-    res.json("article_detail", {
-        title: article.title,
-        article_text: article.article_text,
-        article: article,
-    });
+    const articleDetail = await Article.findById(req.body._id).exec()
+    console.log(req.body._id)
+    console.log(articleDetail)
+    res.json(articleDetail)
 });
 
 //display article create form on GET(Do I need this?)
