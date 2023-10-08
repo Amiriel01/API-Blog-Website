@@ -3,6 +3,7 @@ const asyncHandler = require("express-async-handler");
 const Article = require("../models/article");
 const { body, validationResult } = require("express-validator");
 const Comment = require("../models/comment");
+const article = require("../models/article");
 
 exports.comment_create = [
     //validate and sanitize fields
@@ -28,7 +29,7 @@ exports.comment_create = [
         if (!errors.isEmpty()) {
             //get article info from the form
             errors.array()
-            // res.json(comment)
+            res.json(errors.array())
             return;
         } else {
             //data from form is valid, save article
@@ -37,4 +38,35 @@ exports.comment_create = [
     })
 ]
 
+exports.comment_update = [
+    //validate and sanitize fields
+    body("comment_text", "Article cannot be blank.")
+        .trim()
+        .isLength({ min: 1 })
+        .isLength({ max: 250 })
+        .escape(),
+
+    asyncHandler(async (req, res, next) => {
+        //take out validation errors from the request
+        const errors = validationResult(req);
+
+        //when the errors are gone, render the form again with sanitized values and error messages
+        if (!errors.isEmpty()) {
+            //get comment info from the form
+            res.json("Console.log for errors");
+            return;
+        } else {
+            //update the comment
+            const commentUpdate = await Comment.findByIdAndUpdate(req.body._id, { comment_text: req.body.comment_text }).exec()
+            //data from form is valid, save article
+            return res.json(commentUpdate)
+        }
+    })
+]
+
+//comment delete
+exports.comment_delete = async (req, res, next) => {
+    const commentDelete = await Comment.findByIdAndRemove(req.params.id).exec();
+    res.json(commentDelete);
+}
 

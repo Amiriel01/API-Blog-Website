@@ -2,6 +2,7 @@ const User = require("../models/user");
 const asyncHandler = require("express-async-handler");
 const Article = require("../models/article");
 const { body, validationResult } = require("express-validator");
+const Comment = require("../models/comment")
 
 
 //display a list of all articles 
@@ -13,9 +14,12 @@ exports.article_list = asyncHandler(async (req, res, next) => {
 
 //display details for each article for user view
 exports.article_detail = asyncHandler(async (req, res, next) => {
-    const articleDetail = await Article.findById(req.params.id).exec()
+    const articleDetail = await Article.findById(req.params.id).populate("comments").exec()
+    const comments = await Comment.find({article: articleDetail._id})
+    //figure out why it is not autopopulating later!
+    articleDetail.comments = comments
     // console.log(req.body._id)
-    // console.log(articleDetail)
+    console.log(articleDetail)
     res.json(articleDetail)
 });
 
@@ -72,15 +76,10 @@ exports.article_update = [
         //take out validation errors from the request
         const errors = validationResult(req);
 
-        //update article object with escaped and trimmed information
-        let article = {
-            title: req.body.title,
-            article_text: req.body.article_text,
-        };
         //when the errors are gone, render the form again with sanitized values and error messages
         if (!errors.isEmpty()) {
             //get article info from the form
-            res.json(article);
+            res.json("Console.log for errors");
             return;
         } else {
             //

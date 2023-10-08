@@ -23,11 +23,14 @@ router.put("/article/:id", article_controller.article_update)
 //article update DELETE
 router.delete("/article/:id", article_controller.article_delete)
 
-//article update POST
+//comment create POST
 router.post("/article/:id/comment", comment_controller.comment_create)
 
-//delete comment id needed
+//comment update PUT
+router.put("/article/:id/comment/:id", comment_controller.comment_update);
 
+//delete comment id needed
+router.delete("/article/:id/comment/:id", comment_controller.comment_delete);
 
 
 module.exports = router;
