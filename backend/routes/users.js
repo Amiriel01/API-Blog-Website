@@ -37,12 +37,12 @@ router.get("/logout", (req, res, next) => {
     if (err) {
       return next(err);
     }
-    res.json("You were logged out")
+    // res.json("You were logged out.")
+    res.redirect('/')
   });
 });
 
 //user update DELETE
 router.delete("/user/:id", user_controller.user_delete)
-
 
 module.exports = router;

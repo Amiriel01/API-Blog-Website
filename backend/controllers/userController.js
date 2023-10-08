@@ -48,6 +48,8 @@ exports.sign_up = [
 ]
 
 exports.user_delete = async (req, res, next) => {
-    const userDelete = await User.findByIdAndRemove(req.body._id).exec();
+    console.log("delete")
+    const userDelete = await User.findByIdAndRemove(req.params.id).exec();
+    
     res.json(userDelete);
 }

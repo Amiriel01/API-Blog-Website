@@ -92,6 +92,6 @@ exports.article_update = [
 ];
 
 exports.article_delete = async (req, res, next) => {
-    const articleDelete = await Article.findByIdAndRemove(req.body._id).exec();
+    const articleDelete = await Article.findByIdAndRemove(req.params.id).exec();
     res.json(articleDelete);
 }
