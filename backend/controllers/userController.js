@@ -19,20 +19,6 @@ exports.sign_up = [
         .isLength({ min: 5 })
         .isLength({ max: 10 })
         .escape(),
-    body("confirm_password", "Confirm password cannot be blank.")
-        .trim()
-        .isLength({ min: 5 })
-        .isLength({ max: 10 })
-        .custom(async (confirmPassword, { req }) => {
-            console.log(confirmPassword)
-            const password = req.body.password
-            console.log(password)
-            if (password !== confirmPassword) {
-                throw new Error('Passwords must match.')
-            }
-            return true;
-        })
-        .escape(),
 
     asyncHandler(async (req, res, next) => {
         //take out validation errors from the request
@@ -50,7 +36,8 @@ exports.sign_up = [
             //get all user info from the form
             // user.user,
             errors.array()
-            res.json(user)
+            console.log(errors)
+            res.json({error:"there is an error"})
             return;
         } else {
             //data is valid, save user
@@ -59,3 +46,8 @@ exports.sign_up = [
         }
     }),
 ]
+
+exports.user_delete = async (req, res, next) => {
+    const userDelete = await User.findByIdAndRemove(req.body._id).exec();
+    res.json(userDelete);
+}

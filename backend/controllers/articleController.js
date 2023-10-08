@@ -13,7 +13,7 @@ exports.article_list = asyncHandler(async (req, res, next) => {
 
 //display details for each article for user view
 exports.article_detail = asyncHandler(async (req, res, next) => {
-    const articleDetail = await Article.findById(req.body._id).exec()
+    const articleDetail = await Article.findById(req.params.id).exec()
     // console.log(req.body._id)
     // console.log(articleDetail)
     res.json(articleDetail)

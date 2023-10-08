@@ -23,6 +23,11 @@ router.put("/article/:id", article_controller.article_update)
 //article update DELETE
 router.delete("/article/:id", article_controller.article_delete)
 
+//article update POST
+router.post("/article/:id/comment", comment_controller.comment_create)
+
+//delete comment id needed
+
 
 
 module.exports = router;

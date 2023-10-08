@@ -6,8 +6,9 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require("express-session");
 const passport = require("passport");
-const LocalStrategy = require("passport-local").Strategy;
+const JsonStrategy = require("passport-json").Strategy;
 const bcrypt = require('bcryptjs');
+const User = require('./models/user');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -66,7 +67,7 @@ app.use(function(err, req, res, next) {
 });
 
 passport.use(
-  new LocalStrategy(async (username, password, done) => {
+  new JsonStrategy(async (username, password, done) => {
     try {
       const user = await User.findOne({ username: username });
       if (!user) {
