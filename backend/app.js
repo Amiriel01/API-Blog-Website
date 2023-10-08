@@ -12,7 +12,7 @@ const bcrypt = require('bcryptjs');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 //rename this!
-const formRouter = require('./routes/routers');
+const articleCommentRouter = require('./routes/routers');
 
 const app = express();
 
@@ -47,7 +47,7 @@ app.use((req, res, next) => {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/routers', formRouter);
+app.use('/routers', articleCommentRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

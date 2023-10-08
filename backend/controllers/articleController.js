@@ -20,7 +20,7 @@ exports.article_detail = asyncHandler(async (req, res, next) => {
 });
 
 //handle article create on POST
-exports.article_create_post = [
+exports.article_create = [
     //validate and sanitize fields
     body("title", "Title cannot be blank")
         .trim()
@@ -44,7 +44,9 @@ exports.article_create_post = [
         //when the errors are gone, render the form again with sanitized values and error messages
         if (!errors.isEmpty()) {
             //get article info from the form
+            errors.array()
             res.json(article)
+            
             return;
         } else {
             //data from form is valid, save article

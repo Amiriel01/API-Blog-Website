@@ -12,7 +12,7 @@ const comment_controller = require("../controllers/commentController");
 router.get("/articles", article_controller.article_list);
 
 //create an article
-router.post("/article", article_controller.article_create_post)
+router.post("/article", article_controller.article_create)
 
 //article detail page for each article
 router.get("/article/:id", article_controller.article_detail)
