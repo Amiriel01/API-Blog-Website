@@ -44,10 +44,7 @@ exports.article_create_post = [
         //when the errors are gone, render the form again with sanitized values and error messages
         if (!errors.isEmpty()) {
             //get article info from the form
-            res.json("article_create", {
-                article: article,
-                errors: errors.array(),
-            });
+            res.json(article)
             return;
         } else {
             //data from form is valid, save article
@@ -55,13 +52,6 @@ exports.article_create_post = [
         }
     })
 ]
-
-// //update article GET. Do not need
-// exports.article_update = asyncHandler(async (req, res, next) => {
-//     const articleUpdate = await Article.findById(req.body._id).exec();
-//     console.log(articleUpdate)
-//     res.json(articleUpdate)
-// });
 
 exports.article_update = [
     //validate and sanitize fields
@@ -88,10 +78,7 @@ exports.article_update = [
         //when the errors are gone, render the form again with sanitized values and error messages
         if (!errors.isEmpty()) {
             //get article info from the form
-            res.json("article_update", {
-                article: article,
-                errors: errors.array(),
-            });
+            res.json(article);
             return;
         } else {
             //
