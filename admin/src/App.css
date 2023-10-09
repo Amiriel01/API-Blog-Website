@@ -2,7 +2,7 @@ body {
   background-color: lightblue;
 }
 
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -44,4 +44,9 @@ body {
 
 .read-the-docs {
   color: #888;
+} */
+
+.article-container {
+  display: flex;
+  justify-content: space-around;
 }
