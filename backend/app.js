@@ -9,6 +9,7 @@ const passport = require("passport");
 const JsonStrategy = require("passport-json").Strategy;
 const bcrypt = require('bcryptjs');
 const User = require('./models/user');
+const cors = require('cors')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -30,7 +31,7 @@ async function main() {
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
