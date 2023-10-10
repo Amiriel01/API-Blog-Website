@@ -8,22 +8,18 @@ import React from 'react';
 import Homepage from './Homepage';
 import Article from './Article';
 import CreateArticle from './CreateArticle';
+import ArticleUpdate from './ArticleUpdate';
 
 export default function App() {
-
-
-  // //get an single article by id and its details
-  
 
   return (
     <>
       <div>
         <Routes>
-          <Route path="*" element={<Homepage
-          />} />
-          <Route path="/article/:id" element={<Article
-          />} />
-          <Route path="/CreateArticle" element={<CreateArticle
+          <Route path="*" element={<Homepage />} />
+          <Route path="/article/:id" element={<Article />} />
+          <Route path="/CreateArticle" element={<CreateArticle />} />
+          <Route path="/ArticleUpdate" element={<ArticleUpdate
           />} />
         </Routes>
       </div>

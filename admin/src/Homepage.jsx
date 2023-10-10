@@ -32,18 +32,17 @@ export default function Homepage() {
                     </button>
                 </Link>
             </div>
-            <div className="article-container">
-                {articles.map((article) => {
-
-                    return <Link to={"/Article/" + article._id} 
-                        key={article._id}>
-                        <div className="article-card" >
-                            <h2>{article.title}</h2>
-                            <p>{moment(article.timestamp).format('MMMM Do YYYY, h:mm:ss a')}</p>
-                            <p>{article.article_text}</p>
-                            <p>{article.comments}</p>
-                        </div>
-                    </Link>
+            <div className="all-articles-container">        
+                    {articles.map((article) => {
+                        return <Link to={"/Article/" + article._id}
+                            key={article._id}>
+                            <div className="article-card" >
+                                <h2>{article.title}</h2>
+                                <p>{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
+                                <p>{article.article_text}</p>
+                                <p>{article.comments}</p>
+                            </div>
+                        </Link>
                 })}
             </div>
         </>
