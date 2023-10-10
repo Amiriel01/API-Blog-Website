@@ -9,7 +9,14 @@ export default function Homepage({ articles, setArticles }) {
 
     return (
         <>
-            <h1 className="page-title">Admin Blog Page</h1>
+            <div>
+                <h1 className="page-title">Admin Blog Page</h1>
+                <Link id="create-article-button" className="link" to="/CreateArticle">
+                    <button id="create-article-button">
+                        Create New Article
+                    </button>
+                </Link>
+            </div>
             <div className="article-container">
                 {articles.map((article) => {
 
@@ -18,7 +25,7 @@ export default function Homepage({ articles, setArticles }) {
                         <p>{article.timestamp}</p>
                         <p>{article.article_text}</p>
                         <p>{article.comments}</p>
-                        </div>
+                    </div>
                 })}
             </div>
         </>

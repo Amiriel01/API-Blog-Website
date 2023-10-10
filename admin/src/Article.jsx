@@ -5,6 +5,7 @@ import App from "./App";
 import moment from "moment"
 
 export default function Article({ article, setArticle }) {
+    
     console.log({ article })
 
     return (
@@ -14,11 +15,11 @@ export default function Article({ article, setArticle }) {
                 {/* {article.map((article) => {
 
                     return <div key={article._id}> */}
-                        <p>{article.title}</p>
-                        <p>{article.timestamp}</p>
-                        <p>{article.article_text}</p>
-                        <p>{article.comments}</p>
-                        </div>
+                <p>{article.title}</p>
+                <p>{article.timestamp}</p>
+                <p>{article.article_text}</p>
+                <p>{article.comments}</p>
+            </div>
             {/* //     })}
             // </div> */}
         </>

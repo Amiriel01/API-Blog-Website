@@ -7,6 +7,7 @@ import axios from "axios";
 import React from 'react';
 import Homepage from './Homepage';
 import Article from './Article';
+import CreateArticle from './CreateArticle';
 
 export default function App() {
   //use states for methods (http verbs)
@@ -36,18 +37,19 @@ export default function App() {
     const article = getArticle()
   }, []);
 
-
   return (
     <>
       <div>
         <Routes>
           <Route path="*" element={<Homepage
             articles={articles}
-            setArticle={setArticles}
+            setArticles={setArticles}
           />} />
-          <Route path="article/:id" element={<Article
+          <Route path="/article/:id" element={<Article
             article={article}
             setArticle={setArticle}
+          />} />
+          <Route path="/CreateArticle" element={<CreateArticle
           />} />
         </Routes>
       </div>
