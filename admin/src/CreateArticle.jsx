@@ -60,6 +60,11 @@ export default function CreateArticle() {
                         />
                     </div>
                     <button type="submit">Create Article</button>
+                    <Link id="homepage-button-container" className="link" to="/Homepage">
+                    <button id="homepage-button">
+                        Return Home
+                    </button>
+                </Link>
                 </form>
             </div>
         </>

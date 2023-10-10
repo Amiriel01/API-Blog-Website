@@ -2,9 +2,23 @@ body {
   background-color: lightblue;
 }
 
+#homepage-header-container {
+  text-align: center;
+}
+
 .article-container {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.article-card {
+  border: solid darkblue 2px;
+  width: 20%;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: aliceblue;
 }
 
 .page-title {
@@ -12,11 +26,17 @@ body {
   font-size: 3rem;
 }
 
-label,
+label {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
 input,
 textarea {
+  border: solid darkblue 2px;
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  background-color: aliceblue;
 }
 
 #label-input-container {
@@ -39,4 +59,20 @@ textarea {
 button {
   padding: .5rem;
   font-size: 1.5rem;
+  background-color: aliceblue;
+  border: solid darkblue 2px;
+  color: black;
+  font-weight: bold;
+  margin-right: 2rem;
+}
+
+button:hover {
+  color: aliceblue;
+  background-color: darkblue;
+}
+
+button:active {
+  background-color: aliceblue;
+  border: solid darkblue 2px;
+  color: darkblue;
 }

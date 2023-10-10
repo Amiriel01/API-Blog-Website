@@ -5,11 +5,11 @@ import App from "./App";
 import moment from "moment"
 
 export default function Homepage({ articles, setArticles }) {
-    console.log({ articles })
+    // console.log({ articles })
 
     return (
         <>
-            <div>
+            <div id="homepage-header-container">
                 <h1 className="page-title">Admin Blog Page</h1>
                 <Link id="create-article-button" className="link" to="/CreateArticle">
                     <button id="create-article-button">
@@ -20,8 +20,8 @@ export default function Homepage({ articles, setArticles }) {
             <div className="article-container">
                 {articles.map((article) => {
 
-                    return <div key={article._id}>
-                        <p>{article.title}</p>
+                    return <div className="article-card" key={article._id}>
+                        <h2>{article.title}</h2>
                         <p>{article.timestamp}</p>
                         <p>{article.article_text}</p>
                         <p>{article.comments}</p>
