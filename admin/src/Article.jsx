@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Link, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Link, NavLink, Routes, useLocation } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import App from "./App";
 import moment from "moment"
@@ -11,7 +11,7 @@ export default function Article() {
     const [article, setArticle] = useState([]);
 
     async function getArticle() {
-        await axios.get(`http://localhost:3000/routers/article/${id}`).then((response) => {
+        await axios.get(`http://localhost:3100/routers/article/${id}`).then((response) => {
             setArticle(response.data);
         });
     }
@@ -40,7 +40,6 @@ export default function Article() {
             <div className="article-container">
                 <div id="article-title-container">
                     <h2 id="article-title">Article Title: </h2>
-                    
                     <h2>{article.title}</h2>
                 </div>
                 <p>{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p>

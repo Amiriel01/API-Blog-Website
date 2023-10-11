@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Link, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, Link, NavLink, Routes, useLocation } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import App from "./App";
 import moment from "moment"
@@ -13,7 +13,7 @@ export default function Homepage() {
     const [articles, setArticles] = useState([]);
 
     async function getArticles() {
-        await axios.get("http://localhost:3000/routers/articles").then((response) => {
+        await axios.get("http://localhost:3100/routers/articles").then((response) => {
             setArticles(response.data);
         });
     }
@@ -26,23 +26,25 @@ export default function Homepage() {
         <>
             <div id="homepage-header-container">
                 <h1 className="page-title">Admin Blog Page</h1>
-                <Link id="create-article-button" className="link" to="/CreateArticle">
+                <NavLink to="/CreateArticle">
                     <button id="create-article-button">
                         Create New Article
                     </button>
-                </Link>
+                </NavLink>
             </div>
-            <div className="all-articles-container">        
-                    {articles.map((article) => {
-                        return <Link to={"/Article/" + article._id}
-                            key={article._id}>
-                            <div className="article-card" >
-                                <h2>{article.title}</h2>
-                                <p>{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
-                                <p>{article.article_text}</p>
-                                <p>{article.comments}</p>
-                            </div>
-                        </Link>
+            <div className="all-articles-container">
+                {articles.map((article) => {
+                    return <NavLink to={"/Article/" + article._id} 
+                        key={article._id}
+                        className="link"
+                        >
+                        <div className="article-card" >
+                            <h2>{article.title}</h2>
+                            <p>{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
+                            <p>{article.article_text}</p>
+                            <p>{article.comments}</p>
+                        </div>
+                    </NavLink>
                 })}
             </div>
         </>

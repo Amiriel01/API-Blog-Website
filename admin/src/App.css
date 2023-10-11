@@ -15,13 +15,22 @@ body {
 
 .article-card {
   border: solid darkblue 2px;
-  width: 20rem;
+  width: 25rem;
   height: 10rem;
   margin-bottom: 2rem;
   padding: 1rem;
   background-color: aliceblue;
   overflow: hidden;
   word-wrap: break-word;
+}
+
+.link {
+  text-decoration: none;
+  color: blue;
+}
+
+.link:visited {
+  color: blue;
 }
 
 .page-title {

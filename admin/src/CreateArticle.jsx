@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Link, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter, Route, NavLink, Routes, useLocation } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import App from "./App";
 import axios from "axios";
@@ -31,7 +31,7 @@ export default function CreateArticle() {
         }
         setArticle(initialValues)
 
-        axios.post("http://localhost:3000/routers/article", articleData).then((response) => {
+        axios.post("http://localhost:3100/routers/article", articleData).then((response) => {
             console.log(response.status, response.data)
         })
     }
@@ -60,11 +60,11 @@ export default function CreateArticle() {
                         />
                     </div>
                     <button type="submit">Create Article</button>
-                    <Link id="homepage-button-container" className="link" to="/Homepage">
+                    <NavLink id="homepage-button-container" className="link" to="/Homepage">
                     <button id="homepage-button">
                         Return Home
                     </button>
-                </Link>
+                </NavLink>
                 </form>
             </div>
         </>
