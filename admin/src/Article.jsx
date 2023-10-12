@@ -5,6 +5,7 @@ import App from "./App";
 import moment from "moment"
 import { useParams } from "react-router-dom";
 import axios from 'axios'
+import ArticleUpdate from "./ArticleUpdate";
 
 export default function Article() {
     const { id } = useParams();
@@ -20,32 +21,37 @@ export default function Article() {
         getArticle()
     }, []);
 
-    console.log({ article })
-
     return (
         <>
-            <h1 className="page-title">Article Review Page</h1>
-            <div className="article-buttons">
-                <Link to="/Homepage">
-                    <button id="homepage-button">
-                        Return Home
-                    </button>
-                </Link>
-                <Link to="/ArticleUpdate">
-                    <button id="homepage-button">
-                        Update Article
-                    </button>
-                </Link>
-            </div>
-            <div className="article-container">
-                <div id="article-title-container">
-                    <h2 id="article-title">Article Title: </h2>
-                    <h2>{article.title}</h2>
+            <div className="article-review-update-container">
+                <div id="side-container">
+                    <h1 className="page-title">Article Review</h1>
+                    <div className="article-container">
+                        <div id="article-title-container">
+                            <h2 id="article-title"> Title: </h2>
+                            <h2 id="article-title">{article.title}</h2>
+                        </div>
+                        <p className="article-info">{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
+                        <h2 id="article-title"> Article Text: </h2>
+                        <p className="article-info">{article.article_text}</p>
+                        <p className="article-info">{article.comments}</p>
+                    </div>
+                    <div className="article-buttons">
+                        <Link to="/Homepage">
+                            <button id="homepage-button">
+                                Return Home
+                            </button>
+                        </Link>
+                    </div>
                 </div>
-                <p>{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
-                <p>{article.article_text}</p>
-                <p>{article.comments}</p>
-            </div>
+                <div id="side-container">
+                    <ArticleUpdate
+                        article={article}
+                        setArticle={setArticle}
+                    />
+
+                </div>
+            </div >
         </>
     )
 }
