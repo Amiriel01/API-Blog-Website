@@ -21,7 +21,7 @@ export default function ArticleUpdate({ article }) {
             title: article?.title ?? "",
             article_text: article?.article_text ?? ""
         }
-        console.log(obj)
+        // console.log(obj)
         setArticleUpdate(obj)
     }, [article])
 
@@ -40,17 +40,19 @@ export default function ArticleUpdate({ article }) {
             title: articleUpdate.title,
             article_text: articleUpdate.article_text
         }
-        setArticleUpdate({
-            title: articleUpdate.title,
-            article_text: articleUpdate.article_text,
-        })
+
         // console.log(articleUpdate.title)
         axios.put(`http://localhost:3100/routers/article/${id}`, articleData).then((response) => {
             //pass the updated object
-        //   setArticleUpdate(
-        //     {title: articleUpdate.title,
-        //     article_text: articleUpdate.article_text}
-        //   )
+            setArticleUpdate({
+                title: articleUpdate.title,
+                article_text: articleUpdate.article_text
+            })
+            // console.log(id)
+            // console.log(articleData)
+            // console.log(articleUpdate)
+            // console.log(articleUpdate.title)
+            console.log(articleUpdate.article_text)
             console.log(response.status, response.data)
         })
     }
@@ -74,8 +76,8 @@ export default function ArticleUpdate({ article }) {
                         <textarea id="article-input"
                             type="text"
                             name="article_text"
+                            value={articleUpdate.article_text}
                             onChange={handleChange}
-                            defaultValue={articleUpdate.article_text}
                         />
                     </div>
                     <div id="update-button-container">

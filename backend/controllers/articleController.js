@@ -78,13 +78,18 @@ exports.article_update = [
 
         //when the errors are gone, render the form again with sanitized values and error messages
         if (!errors.isEmpty()) {
+            console.log(errors)
             //get article info from the form
             res.json("Console.log for errors");
             return;
         } else {
             //
-            const articleUpdate = await Article.findByIdAndUpdate(req.body._id, {title: req.body.title}, {article_text: req.body.article_text}).exec()
+            const articleUpdate = await Article.findByIdAndUpdate(req.params.id, {title: req.body.title}, {article_text: req.body.article_text}).exec()
             //data from form is valid, save article
+            console.log(req.params.id)
+            console.log(req.body.title)
+            console.log(req.body.article_text)
+            console.log(articleUpdate)
             return res.json(articleUpdate)
         }
     }),
