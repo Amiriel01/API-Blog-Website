@@ -41,7 +41,10 @@ body {
 label,
 #article-title {
   font-size: 2rem;
-  font-weight: bold;
+}
+
+#article-title {
+  text-decoration: underline;
 }
 
 .article-info  {
@@ -75,20 +78,14 @@ height: 20rem;
 }
 
 .article-container {
-  /* width: 30%;
+  width: 30%;
   margin-left: auto;
-  margin-right: auto; */
+  margin-right: auto;
   margin-top: 2rem;
-  /* text-align: center; */
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
-#article-title-container {
-  display: flex;
-}
-
-#article-title {
-  margin-right: 1rem;
-}
 .article-buttons {
   display: flex;
   justify-content: center;
@@ -114,11 +111,6 @@ button:active {
   background-color: aliceblue;
   border: solid darkblue 2px;
   color: darkblue;
-}
-
-.article-review-update-container{
-  display: flex;
-  justify-content: space-evenly;
 }
 
 #update-button-container {

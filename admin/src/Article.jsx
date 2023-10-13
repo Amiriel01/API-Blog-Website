@@ -23,35 +23,40 @@ export default function Article() {
 
     return (
         <>
-            <div className="article-review-update-container">
-                <div id="side-container">
-                    <h1 className="page-title">Article Review</h1>
-                    <div className="article-container">
-                        <div id="article-title-container">
-                            <h2 id="article-title"> Title: </h2>
-                            <h2 id="article-title">{article.title}</h2>
-                        </div>
-                        <p className="article-info">{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
-                        <h2 id="article-title"> Article Text: </h2>
-                        <p className="article-info">{article.article_text}</p>
-                        <p className="article-info">{article.comments}</p>
-                    </div>
-                    <div className="article-buttons">
-                        <Link to="/Homepage">
-                            <button id="homepage-button">
-                                Return Home
-                            </button>
-                        </Link>
-                    </div>
-                </div>
-                <div id="side-container">
+            <h1 className="page-title">Article Review</h1>
+            <div className="article-container">
+                <h2 id="article-title"> Title: </h2>
+                <p className="article-info">{article.title}</p>
+                <h2 id="article-title"> Timestamp: </h2>
+                <p className="article-info">{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
+                <h2 id="article-title"> Article Text: </h2>
+                <p className="article-info">{article.article_text}</p>
+                <p className="article-info">{article.comments}</p>
+            </div>
+            <div className="article-buttons">
+                <Link to="/Homepage">
+                    <button id="homepage-button">
+                        Return Home
+                    </button>
+                </Link>
+                <Link
+                    to={`/ArticleUpdate/${id}`}
+                    article={article}
+                >
+                    <button >
+                        Update Article
+                    </button>
+                </Link>
+                <button >
+                    Delete Article
+                </button>
+            </div>
+            {/* <div id="side-container">
                     <ArticleUpdate
                         article={article}
                         setArticle={setArticle}
-                    />
-
-                </div>
-            </div >
+                    /> */}
+            {/* </div > */}
         </>
     )
 }

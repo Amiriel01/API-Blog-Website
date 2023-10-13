@@ -4,12 +4,24 @@ import { useEffect, useState } from "react";
 import App from "./App";
 import axios from "axios";
 import Article from "./Article";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 
-export default function ArticleUpdate({ article }) {
+export default function ArticleUpdate() {
     // console.log(article)
     const { id } = useParams();
+
+    const [article, setArticle] = useState([]);
+
+    async function getArticle() {
+        await axios.get(`http://localhost:3100/routers/article/${id}`).then((response) => {
+            setArticle(response.data);
+        });
+    }
+
+    useEffect(() => {
+        getArticle()
+    }, []);
 
     const [articleUpdate, setArticleUpdate] = useState({
         title: "",
@@ -67,6 +79,7 @@ export default function ArticleUpdate({ article }) {
                         <input
                             type="text"
                             name="title"
+                            defaultValue={article.title}
                             value={articleUpdate.title}
                             onChange={handleChange}
                         />
@@ -76,6 +89,7 @@ export default function ArticleUpdate({ article }) {
                         <textarea id="article-input"
                             type="text"
                             name="article_text"
+                            defaultValue={article.article_text}
                             value={articleUpdate.article_text}
                             onChange={handleChange}
                         />
@@ -83,6 +97,12 @@ export default function ArticleUpdate({ article }) {
                     <div id="update-button-container">
                         <button className="article-buttons" type="submit">Update Article</button>
                     </div>
+                    <Link to={"/Article/" + article._id}
+                    >
+                         <button >
+                                Return To Article
+                            </button>
+                    </Link>
                 </form>
             </div>
         </>
