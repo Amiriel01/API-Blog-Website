@@ -84,9 +84,9 @@ exports.article_update = [
             return;
         } else {
             //
-            const articleUpdate = await Article.findByIdAndUpdate(req.params.id, {title: req.body.title}, {article_text: req.body.article_text}).exec()
+            const articleUpdate = await Article.findByIdAndUpdate(req.params.id, {title: req.body.title, article_text: req.body.article_text}, {new:true}).exec()
             //data from form is valid, save article
-            console.log(req.params.id)
+            // console.log(req.params.id)
             console.log(req.body.title)
             console.log(req.body.article_text)
             console.log(articleUpdate)
