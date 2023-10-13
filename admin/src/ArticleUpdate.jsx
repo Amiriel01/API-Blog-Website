@@ -73,37 +73,39 @@ export default function ArticleUpdate() {
         <>
             <div>
                 <h1 className="page-title">Update Article</h1>
-                <form className="article-form-container" onSubmit={handleSubmit}>
-                    <div id="label-input-container">
-                        <label>Title:</label>
-                        <input
-                            type="text"
-                            name="title"
-                            defaultValue={article.title}
-                            value={articleUpdate.title}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div id="label-input-container">
-                        <label>Article Text:</label>
-                        <textarea id="article-input"
-                            type="text"
-                            name="article_text"
-                            defaultValue={article.article_text}
-                            value={articleUpdate.article_text}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div id="update-button-container">
-                        <button className="article-buttons" type="submit">Update Article</button>
-                    </div>
-                    <Link to={"/Article/" + article._id}
-                    >
-                         <button >
-                                Return To Article
-                            </button>
-                    </Link>
-                </form>
+                <div id="flex-form-container">
+                    <form className="form-container" onSubmit={handleSubmit}>
+                        <div id="label-input-container">
+                            <label>Title:</label>
+                            <input
+                                type="text"
+                                name="title"
+                                defaultValue={article.title}
+                                value={articleUpdate.title}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div id="label-input-container">
+                            <label>Article Text:</label>
+                            <textarea id="article-input"
+                                type="text"
+                                name="article_text"
+                                defaultValue={article.article_text}
+                                value={articleUpdate.article_text}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div id="update-button-container">
+                            <button className="article-buttons" type="submit">Update Article</button>
+                            <NavLink className="link" to={"/Article/" + article._id}
+                            >
+                                <button className="article-buttons">
+                                    Return To Article
+                                </button>
+                            </NavLink>
+                        </div>
+                    </form>
+                </div>
             </div>
         </>
     )
