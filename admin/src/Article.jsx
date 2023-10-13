@@ -18,8 +18,9 @@ export default function Article() {
     }
 
     async function handleDelete() {
-         axios.delete(`http://localhost:3100/routers/article/${id}`).then((response) 
-    )}
+        axios.delete(`http://localhost:3100/routers/article/${id}`).then((response)
+        )
+    }
 
     useEffect(() => {
         getArticle()
@@ -51,9 +52,11 @@ export default function Article() {
                         Update Article
                     </button>
                 </Link>
-                <button onClick={handleDelete}>
-                    Delete Article
-                </button>
+                <Link to="/Homepage">
+                    <button onClick={handleDelete}>
+                        Delete Article
+                    </button>
+                </Link>
             </div>
             {/* <div id="side-container">
                     <ArticleUpdate
