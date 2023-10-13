@@ -42,7 +42,7 @@ export default function Homepage() {
                             <h2>{article.title}</h2>
                             <p>{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
                             <p>{article.article_text}</p>
-                            <p>{article.comments}</p>
+                            {/* <p>{article.comments}</p> */}
                         </div>
                     </NavLink>
                 })}
