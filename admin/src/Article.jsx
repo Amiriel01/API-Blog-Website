@@ -17,6 +17,10 @@ export default function Article() {
         });
     }
 
+    async function handleDelete() {
+         axios.delete(`http://localhost:3100/routers/article/${id}`).then((response) 
+    )}
+
     useEffect(() => {
         getArticle()
     }, []);
@@ -47,7 +51,7 @@ export default function Article() {
                         Update Article
                     </button>
                 </Link>
-                <button >
+                <button onClick={handleDelete}>
                     Delete Article
                 </button>
             </div>
