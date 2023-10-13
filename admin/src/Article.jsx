@@ -58,12 +58,6 @@ export default function Article() {
                     </button>
                 </Link>
             </div>
-            {/* <div id="side-container">
-                    <ArticleUpdate
-                        article={article}
-                        setArticle={setArticle}
-                    /> */}
-            {/* </div > */}
         </>
     )
 }

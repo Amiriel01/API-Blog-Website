@@ -40,32 +40,34 @@ export default function CreateArticle() {
         <>
             <div>
                 <h1 className="page-title">Create New Article</h1>
-                <form className="form-container" onSubmit={handleSubmit}>
-                    <div id="label-input-container">
-                        <label>Title:</label>
-                        <input
-                            type="text"
-                            name="title"
-                            value={article.title}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div id="label-input-container">
-                        <label>Article Text:</label>
-                        <textarea id="article-input"
-                            type="text"
-                            name="article_text"
-                            value={article.article_text}
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <button type="submit">Create Article</button>
-                    <NavLink id="homepage-button-container" className="link" to="/Homepage">
-                    <button id="homepage-button">
-                        Return Home
-                    </button>
-                </NavLink>
-                </form>
+                <div id="flex-form-container">
+                    <form className="form-container" onSubmit={handleSubmit}>
+                        <div id="label-input-container">
+                            <label>Title:</label>
+                            <input
+                                type="text"
+                                name="title"
+                                value={article.title}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div id="label-input-container">
+                            <label>Article Text:</label>
+                            <textarea id="article-input"
+                                type="text"
+                                name="article_text"
+                                value={article.article_text}
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <button type="submit">Create Article</button>
+                        <NavLink id="homepage-button-container" className="link" to="/Homepage">
+                            <button id="homepage-button">
+                                Return Home
+                            </button>
+                        </NavLink>
+                    </form>
+                </div>
             </div>
         </>
     )
