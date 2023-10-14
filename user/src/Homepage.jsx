@@ -7,7 +7,9 @@ import axios from 'axios'
 export default function Homepage() {
     return (
         <>
-        Homepage
+        <div className="homepage-container">
+            
+        </div>
         </>
     )
 }

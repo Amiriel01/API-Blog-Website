@@ -8,7 +8,6 @@ import axios from 'axios'
 export default function Article() {
     const { id } = useParams();
     const [article, setArticle] = useState({});
-    // const comments = [];
 
     async function getArticle() {
         await axios.get(`http://localhost:3100/routers/article/${id}`).then((response) => {

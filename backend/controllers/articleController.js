@@ -34,7 +34,6 @@ exports.article_create = [
     body("article_text", "Article cannot be blank.")
         .trim()
         .isLength({ min: 1 })
-        .isLength({ max: 1000 })
         .escape(),
 
     asyncHandler(async (req, res, next) => {
@@ -64,12 +63,11 @@ exports.article_update = [
     body("title", "Title cannot be blank")
         .trim()
         .isLength({ min: 1 })
-        .isLength({ max: 50 })
+        .isLength({ max: 100 })
         .escape(),
     body("article_text", "Article cannot be blank.")
         .trim()
         .isLength({ min: 1 })
-        .isLength({ max: 1000 })
         .escape(),
 
     asyncHandler(async (req, res, next) => {
