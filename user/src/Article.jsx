@@ -29,51 +29,42 @@ export default function Article() {
         getArticle()
     }, []);
 
-    const comment = article.comments?.map((comment) => {
-        <li key={comment._id}>
-            <p>{comment.comment_text}</p>
-        </li>
-        console.log(comment._id)
-        console.log(comment.comment_text)
+    const commentComponent = article.comments?.map((comment) => {
+        return <div key={comment._id}>
+            <div id="comment-card">
+                <div id="comment-text">
+                    <p>{moment(comment.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
+                    <p id="comment_text">{comment.comment_text}</p>
+                </div>
+            </div>
+        </div>
     })
 
     return (
         <>
             {/* <h1 className="page-title">Welcome to my blog!</h1> */}
             <div className="article-container">
-                <h2 id="article-title"> Title: </h2>
+                {/* <h2 id="article-title"> Title: </h2> */}
                 <p className="article-info">{article.title}</p>
-                <h2 id="article-title"> Timestamp: </h2>
+                {/* <h2 id="article-title"> Timestamp: </h2> */}
                 <p className="article-info">{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
-                <h2 id="article-title"> Article Text: </h2>
+                {/* <h2 id="article-title"> Article Text: </h2> */}
                 <p className="article-info">{article.article_text}</p>
-                <h2 id="article-title"> Article Comments: </h2>
-                <ul>{comment}</ul>
-                {/* <p className="article-info">{comment.comment_text}</p> */}
-                {/* {article.comments.map((comment) => {
-                    key={comment._id}
-                    <p {comment.comment_text} </p>
-                })} */}
-                {/* {article.map((comments) {
-                    return (key={comments}
-                    {comments.map((comment) => {
-                            <p>key={comment.id}</p>
-                            return (
-                                <p>{comment}</p>
-                            )
-                        })
-                    }
-                }))} */}
+                <div className="article-buttons">
+                    <div id="comment-button">
+                        <button type="submit" id="homepage-button comment-button">
+                            Comment
+                        </button>
+                    </div>
+                    <Link to="/Homepage">
+                        <button id="homepage-button">
+                            Return Home
+                        </button>
+                    </Link>
+                    {/* <h2 id="article-title"> Article Comments: </h2> */}
+                    <ul>{commentComponent}</ul>
+                </div>
 
-                {/* map over article.comment array
-                <p className="article-info">{article.comments}</p> */}
-            </div>
-            <div className="article-buttons">
-                <Link to="/Homepage">
-                    <button id="homepage-button">
-                        Return Home
-                    </button>
-                </Link>
                 {/* <Link
                     to={`/ArticleUpdate/${id}`}
                     article={article}

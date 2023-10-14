@@ -1,45 +1,95 @@
 * {
-    margin:0; 
-    padding: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  background-color: #f9f4f5;
+}
+
+.header {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #homepage-header-container {
-    text-align: center;
-    font-size: 2rem;
-    color: blueviolet;
-    background-color: rgb(222, 217, 226);
-    padding: 3rem;
-    border-bottom: 5px solid blueviolet;
-    border-top: 5px solid blueviolet;
+  text-align: center;
+  padding: 4rem;
+  border-bottom: 10px double #99ced3;
 }
 
+.page-title {
+  font-family: 'Sacramento', cursive;
+  font-size: 8rem;
+  color: #4d6d9a;
+  text-shadow: -2px 2px 4px #edb5bf,
+				  2px 2px 4px #edb5bf,
+				 2px -2px 0 #edb5bf,
+         -2px -2px 0 #edb5bf;
+}
+
+.page-second-title {
+  font-family: 'Sacramento', cursive;
+  font-family: 'Tangerine', cursive;
+  font-size: 4rem;
+  color: #5f6366;
+}
+
+.header-links {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  font-size: 1.75rem;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1rem;
+}
+
+#header-link {
+  text-decoration: none;
+  color:#5f6366;
+}
+
+#header-link:visited {
+  color:#5f6366;
+}
+
+#header-link:hover {
+  color: #edb5bf;
+}
+
+
+
 .all-articles-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-  }
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
 
-  .article-card {
-    border: solid blueviolet 2px;
-    width: 25rem;
-    height: 10rem;
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background-color: rgb(244, 242, 245);
-    overflow: hidden;
-    word-wrap: break-word;
-  }
+.article-card {
+  border: solid blueviolet 2px;
+  width: 25rem;
+  height: 10rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: rgb(244, 242, 245);
+  overflow: hidden;
+  word-wrap: break-word;
+}
 
-  .link {
-    text-decoration: none;
-    color: blueviolet;
-  }
-  
-  .link:visited {
-    color: blueviolet;
-  }
+.link {
+  text-decoration: none;
+  color: blueviolet;
+}
 
-  #article-info {
-    margin-bottom: 1rem;
-  }
+.link:visited {
+  color: blueviolet;
+}
+
+#article-info {
+  margin-bottom: 1rem;
+}
