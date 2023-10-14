@@ -8,10 +8,8 @@ import axios from 'axios'
 import ArticleUpdate from "./ArticleUpdate";
 
 export default function Article() {
-    // const { comment._id } = useParams();
     const { id } = useParams();
     const [article, setArticle] = useState({});
-    // const comments = [];
 
     async function getArticle() {
         await axios.get(`http://localhost:3100/routers/article/${id}`).then((response) => {
@@ -39,7 +37,7 @@ export default function Article() {
 
     async function handleDeleteButton() {
         try {
-            const response = await axios.delete(`http://localhost:3100/routers//article/${id}/comment/${id}`)
+            const response = await axios.delete(`http://localhost:3100/routers/article/${id}/comment/${id}`)
         }catch {}
     }
 
