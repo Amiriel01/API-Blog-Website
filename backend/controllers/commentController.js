@@ -66,7 +66,7 @@ exports.comment_update = [
 
 //comment delete
 exports.comment_delete = async (req, res, next) => {
-    const commentDelete = await Comment.findByIdAndRemove(req.params.id).exec();
+    const commentDelete = await Comment.findByIdAndRemove(req.params.commentId).exec();
     res.json(commentDelete);
 }
 

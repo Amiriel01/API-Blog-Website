@@ -30,7 +30,7 @@ router.post("/article/:id/comment", comment_controller.comment_create)
 router.put("/article/:id/comment/:id", comment_controller.comment_update);
 
 //delete comment id needed
-router.delete("/article/:id/comment/:id", comment_controller.comment_delete);
+router.delete("/article/:id/comment/:commentId", comment_controller.comment_delete);
 
 
 module.exports = router;

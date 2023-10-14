@@ -5,15 +5,6 @@ import moment from "moment"
 import axios from 'axios'
 
 export default function Header() {
-
-    const [article, setArticle] = useState({});
-
-    async function getArticle() {
-        await axios.get(`http://localhost:3100/routers/article/${id}`).then((response) => {
-            console.log(response)
-            setArticle(response.data);
-        });
-    }
     return (
         <>
             <div className="header">

@@ -10,6 +10,7 @@ import ArticleUpdate from "./ArticleUpdate";
 export default function Article() {
     const { id } = useParams();
     const [article, setArticle] = useState({});
+    const [commentRerender, setCommentRerender] = useState(0)
 
     async function getArticle() {
         await axios.get(`http://localhost:3100/routers/article/${id}`).then((response) => {
@@ -35,10 +36,13 @@ export default function Article() {
         } catch { }
     }
 
-    async function handleDeleteButton() {
+    async function handleDeleteButton(comment) {
         try {
-            const response = await axios.delete(`http://localhost:3100/routers/article/${id}/comment/${id}`)
+           await axios.delete(`http://localhost:3100/routers/article/${id}/comment/${comment._id}`)
         }catch {}
+        
+        article.comments.splice(article.comments.indexOf(), 1)
+        setCommentRerender(commentRerender +1)
     }
 
     useEffect(() => {
@@ -53,7 +57,7 @@ export default function Article() {
                     <p id="comment_text">{comment.comment_text}</p>
                 </div>
                 <div id="comment-button">
-                    <button onClick={handleDeleteButton} type="submit" id="homepage-button delete-button">
+                    <button onClick={ () => handleDeleteButton(comment)} type="submit" id="homepage-button delete-button">
                         Delete
                     </button>
                 </div>
@@ -72,7 +76,7 @@ export default function Article() {
                 <h2 id="article-title"> Article Text: </h2>
                 <p className="article-info">{article.article_text}</p>
                 <h2 id="article-title"> Article Comments: </h2>
-                <div className="comment-container">
+                <div className="comment-container" key={commentRerender}>
                     {commentComponent}
                 </div>
             </div>
