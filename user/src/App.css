@@ -1,1 +1,45 @@
+* {
+    margin:0; 
+    padding: 0;
+}
 
+#homepage-header-container {
+    text-align: center;
+    font-size: 2rem;
+    color: blueviolet;
+    background-color: rgb(222, 217, 226);
+    padding: 3rem;
+    border-bottom: 5px solid blueviolet;
+    border-top: 5px solid blueviolet;
+}
+
+.all-articles-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .article-card {
+    border: solid blueviolet 2px;
+    width: 25rem;
+    height: 10rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: rgb(244, 242, 245);
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+
+  .link {
+    text-decoration: none;
+    color: blueviolet;
+  }
+  
+  .link:visited {
+    color: blueviolet;
+  }
+
+  #article-info {
+    margin-bottom: 1rem;
+  }

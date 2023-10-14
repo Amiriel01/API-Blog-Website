@@ -5,7 +5,6 @@ import moment from "moment"
 import axios from 'axios'
 
 export default function Homepage() {
-    // console.log({ articles })
 
     //use states for methods (http verbs)
     //get all articles and details
@@ -38,9 +37,9 @@ export default function Homepage() {
                         className="link"
                         >
                         <div className="article-card" >
-                            <h2>{article.title}</h2>
-                            <p>{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
-                            <p>{article.article_text}</p>
+                            <h2 id="article-info">{article.title}</h2>
+                            <p id="article-info">{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
+                            <p id="article-info">{article.article_text}</p>
                             {/* <p>{article.comments}</p> */}
                         </div>
                     </NavLink>
