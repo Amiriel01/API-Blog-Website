@@ -24,12 +24,12 @@ export default function Homepage() {
     return (
         <>
             <div id="homepage-header-container">
-                <h1 className="page-title">Admin Blog Page</h1>
-                <NavLink to="/CreateArticle">
+                <h1 className="page-title">Welcome To My Blog Page</h1>
+                {/* <NavLink to="/CreateArticle">
                     <button id="create-article-button">
                         Create New Article
                     </button>
-                </NavLink>
+                </NavLink> */}
             </div>
             <div className="all-articles-container">
                 {articles.map((article) => {
