@@ -40,24 +40,12 @@ export default function Article() {
         getArticle()
     }, []);
 
-    // const comment = article.comments?.map((comment) => {
-
-    //     console.log(article.comments)
-    //     console.log({comment})
-    //     console.log(comment.comment_text)
-    //     return comment
-    // })
-
-    const comment = article.comments?.map((comment) => {
-        <li key={comment._id}>
+    const commentComponent = article.comments?.map((comment) => {
+        return <div key={comment._id}>
+            <p>{comment.username}</p>
             <p>{comment.comment_text}</p>
-        </li>
-        console.log(comment._id)
-        console.log(comment.comment_text)
+        </div>
     })
-   
-    
-    // console.log(comment.comment_text)
 
     return (
         <>
@@ -70,25 +58,7 @@ export default function Article() {
                 <h2 id="article-title"> Article Text: </h2>
                 <p className="article-info">{article.article_text}</p>
                 <h2 id="article-title"> Article Comments: </h2>
-                <ul>{comment}</ul>
-                {/* <p className="article-info">{comment.comment_text}</p> */}
-                {/* {article.comments.map((comment) => {
-                    key={comment._id}
-                    <p {comment.comment_text} </p>
-                })} */}
-                {/* {article.map((comments) {
-                    return (key={comments}
-                    {comments.map((comment) => {
-                            <p>key={comment.id}</p>
-                            return (
-                                <p>{comment}</p>
-                            )
-                        })
-                    }
-                }))} */}
-
-                {/* map over article.comment array
-                <p className="article-info">{article.comments}</p> */}
+                {commentComponent}
             </div>
             <div className="article-buttons">
                 <Link to="/Homepage">
