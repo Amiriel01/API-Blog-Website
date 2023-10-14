@@ -10,7 +10,7 @@ import ArticleUpdate from "./ArticleUpdate";
 export default function Article() {
     const { id } = useParams();
     const [article, setArticle] = useState({});
-    const comments = [];
+    // const comments = [];
 
     async function getArticle() {
         await axios.get(`http://localhost:3100/routers/article/${id}`).then((response) => {
@@ -40,12 +40,22 @@ export default function Article() {
         getArticle()
     }, []);
 
+    // const comment = article.comments?.map((comment) => {
+
+    //     console.log(article.comments)
+    //     console.log({comment})
+    //     console.log(comment.comment_text)
+    //     return comment
+    // })
+
     const comment = article.comments?.map((comment) => {
-        console.log(article.comments)
-        console.log({comment})
+        <li key={comment._id}>
+            <p>{comment.comment_text}</p>
+        </li>
+        console.log(comment._id)
         console.log(comment.comment_text)
-        return comment
     })
+   
     
     // console.log(comment.comment_text)
 
@@ -60,6 +70,7 @@ export default function Article() {
                 <h2 id="article-title"> Article Text: </h2>
                 <p className="article-info">{article.article_text}</p>
                 <h2 id="article-title"> Article Comments: </h2>
+                <ul>{comment}</ul>
                 {/* <p className="article-info">{comment.comment_text}</p> */}
                 {/* {article.comments.map((comment) => {
                     key={comment._id}
