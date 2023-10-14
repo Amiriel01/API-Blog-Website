@@ -8,6 +8,7 @@ import axios from 'axios'
 import ArticleUpdate from "./ArticleUpdate";
 
 export default function Article() {
+    // const { comment._id } = useParams();
     const { id } = useParams();
     const [article, setArticle] = useState({});
     // const comments = [];
@@ -36,14 +37,29 @@ export default function Article() {
         } catch { }
     }
 
+    async function handleDeleteButton() {
+        try {
+            const response = await axios.delete(`http://localhost:3100/routers//article/${id}/comment/${id}`)
+        }catch {}
+    }
+
     useEffect(() => {
         getArticle()
     }, []);
 
     const commentComponent = article.comments?.map((comment) => {
         return <div key={comment._id}>
-            <p>{comment.username}</p>
-            <p>{comment.comment_text}</p>
+            <div id="comment-card">
+                <div id="comment-text">
+                    <p>{moment(comment.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
+                    <p id="comment_text">{comment.comment_text}</p>
+                </div>
+                <div id="comment-button">
+                    <button onClick={handleDeleteButton} type="submit" id="homepage-button delete-button">
+                        Delete
+                    </button>
+                </div>
+            </div>
         </div>
     })
 
@@ -58,7 +74,9 @@ export default function Article() {
                 <h2 id="article-title"> Article Text: </h2>
                 <p className="article-info">{article.article_text}</p>
                 <h2 id="article-title"> Article Comments: </h2>
-                {commentComponent}
+                <div className="comment-container">
+                    {commentComponent}
+                </div>
             </div>
             <div className="article-buttons">
                 <Link to="/Homepage">

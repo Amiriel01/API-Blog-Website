@@ -116,3 +116,19 @@ button:active {
   display: flex;
   justify-content: center;
 }
+
+.comment-container {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+#comment-card {
+  border: 1px solid black;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
