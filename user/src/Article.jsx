@@ -41,13 +41,9 @@ export default function Article() {
 
     return (
         <>
-            {/* <h1 className="page-title">Welcome to my blog!</h1> */}
             <div className="article-container">
-                {/* <h2 id="article-title"> Title: </h2> */}
                 <p className="article-info">{article.title}</p>
-                {/* <h2 id="article-title"> Timestamp: </h2> */}
-                <p className="article-info">{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
-                {/* <h2 id="article-title"> Article Text: </h2> */}
+                {/* <p className="article-info">{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p> */}
                 <p className="article-info">{article.article_text}</p>
                 <div className="article-buttons">
                     <div id="comment-button">
@@ -60,7 +56,6 @@ export default function Article() {
                             Return Home
                         </button>
                     </Link>
-                    {/* <h2 id="article-title"> Article Comments: </h2> */}
                     <ul>{commentComponent}</ul>
                 </div>
 

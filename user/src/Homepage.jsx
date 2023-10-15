@@ -22,8 +22,10 @@ export default function Homepage() {
     return (
         <>
             <div className="homepage-container">
-                <div id="article-link-container">
-                    <p>{article.title}</p>
+                <div id="homepage-article-link-container">
+                    <div id="homepage-article">
+                        <p>{article.title}</p>
+                    </div>
                 </div>
             </div>
         </>

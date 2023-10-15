@@ -38,11 +38,10 @@ export default function Article() {
 
     async function handleDeleteButton(comment) {
         try {
-           await axios.delete(`http://localhost:3100/routers/article/${id}/comment/${comment._id}`)
-        }catch {}
-        
-        article.comments.splice(article.comments.indexOf(), 1)
-        setCommentRerender(commentRerender +1)
+            await axios.delete(`http://localhost:3100/routers/article/${id}/comment/${comment._id}`)
+        } catch { }
+        setCommentRerender(commentRerender + 1)
+        // article.comments.splice(article.comments.indexOf(), 1)
     }
 
     useEffect(() => {
@@ -57,7 +56,9 @@ export default function Article() {
                     <p id="comment_text">{comment.comment_text}</p>
                 </div>
                 <div id="comment-button">
-                    <button onClick={ () => handleDeleteButton(comment)} type="submit" id="homepage-button delete-button">
+                    <button onClick={() => handleDeleteButton(comment)}
+                    
+                    type="submit" id="homepage-button delete-button">
                         Delete
                     </button>
                 </div>

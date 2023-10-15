@@ -5,7 +5,7 @@
 
 /* header*/
 .header {
-  background-color: #f9f4f5;
+  background-color: #f8ddca;
 }
 
 #header-container {
@@ -14,18 +14,18 @@
   margin-right: auto;
   text-align: center;
   padding: 4rem;
-  border-bottom: 10px double #99ced3;
+  border-bottom: 10px double #a9d39e;
   padding-bottom: 2rem;
 }
 
 .page-title {
   font-family: 'Sacramento', cursive;
   font-size: 8rem;
-  color: #4d6d9a;
-  text-shadow: -2px 2px 4px #edb5bf,
-				  2px 2px 4px #edb5bf,
-				 2px -2px 0 #edb5bf,
-         -2px -2px 0 #edb5bf;
+  color: #6f6290;
+  text-shadow: -2px 2px 4px #ff686b,
+    2px 2px 4px #ff686b,
+    2px -2px 0 #ff686b,
+    -2px -2px 0 #ff686b;
 }
 
 .page-second-title {
@@ -48,11 +48,11 @@
 
 #header-link {
   text-decoration: none;
-  color:#5f6366;
+  color: #5f6366;
 }
 
 #header-link:visited {
-  color:#5f6366;
+  color: #5f6366;
 }
 
 #header-link:hover {
@@ -60,13 +60,31 @@
 }
 
 /*homepage*/
-.homepage-container {
-  background-color: aliceblue;
+.homepage-container {}
+
+#homepage-article-link-container {
+  background-image: url(images/homepage-image.png);
+  width: 40rem;
+  height: 25rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  position: relative;
 }
 
-#article-link-container {
-  background-image: url(images/homepage-image.png);
-  
+#homepage-article {
+  width: 30rem;
+  height: 4rem;
+  background-color: #f8ddca;
+  position: absolute;
+  top: 10%;
+  left: 13%;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  padding-top: 2rem;
+  border: 5px solid #a9d39e;
 }
 
 .all-articles-container {
@@ -77,14 +95,19 @@
 }
 
 .article-card {
-  border: solid blueviolet 2px;
+  border: solid #edb5bf 2px;
   width: 25rem;
   height: 10rem;
   margin-bottom: 2rem;
   padding: 1rem;
-  background-color: rgb(244, 242, 245);
+  background-color: rgb(169, 211, 158, .1);
   overflow: hidden;
   word-wrap: break-word;
+  color: #6f6290;
+}
+
+.article-card:hover {  
+  border: solid #a9d39e 2px;
 }
 
 .link {
