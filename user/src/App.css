@@ -5,7 +5,7 @@
 
 /* header*/
 .header {
-  background-color: #f8ddca;
+  background-color: rgb(237, 181, 191, .7);
 }
 
 #header-container {
@@ -22,10 +22,10 @@
   font-family: 'Sacramento', cursive;
   font-size: 8rem;
   color: #6f6290;
-  text-shadow: -2px 2px 4px #ff686b,
-    2px 2px 4px #ff686b,
-    2px -2px 0 #ff686b,
-    -2px -2px 0 #ff686b;
+  text-shadow: -2px 2px 4px #a9d39e,
+    2px 2px 4px #a9d39e,
+    2px -2px 0 #a9d39e,
+    -2px -2px 0 #a9d39e;
 }
 
 .page-second-title {
@@ -56,7 +56,7 @@
 }
 
 #header-link:hover {
-  color: #edb5bf;
+  color: rgb(231, 107, 130);
 }
 
 /*homepage*/
@@ -65,10 +65,21 @@
   width: 70%;
   margin-left: auto;
   margin-right: auto;
+  color: #5f6366;
+  margin-top: 3rem;
+}
+
+#homepage-top-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
 #homepage-article-link-container {
-  background-image: url(images/homepage-image.png);
+  background-image: url(images/homepage-image2.png);
+  background-size: cover;
+  background-position: center;
+  /* background-size: 105%; */
   width: 40rem;
   height: 25rem;
   margin-left: auto;
@@ -81,7 +92,7 @@
 #homepage-article {
   width: 30rem;
   height: 4rem;
-  background-color: #f8ddca;
+  background-color: rgb(237, 181, 191);
   position: absolute;
   top: 10%;
   left: 13%;
@@ -90,6 +101,13 @@
   font-weight: bold;
   padding-top: 2rem;
   border: 5px solid #a9d39e;
+}
+
+.homepage-mid-container {
+  border-bottom: 5px solid #a9d39e;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #homepage-mid-title {
@@ -106,6 +124,32 @@
   margin-bottom: 1rem;
   text-align: center;
   color:#6f6290;
+}
+
+#homepage-input-container {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #6f6290;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+#subscriber-input {
+  font-size: 1.5rem;
+  padding: .25rem;
+}
+
+#subscribe-button {
+  font-size: 1.5rem;
+  padding: .25rem;
+  color: #a9d39e;
+  background-color: #6f6290;
+}
+
+#subscribe-button:hover {
+  background-color: #edb5bf;
+  color: #6f6290;
 }
 
 .all-articles-container {
