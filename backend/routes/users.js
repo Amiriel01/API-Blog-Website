@@ -45,4 +45,7 @@ router.get("/logout", (req, res, next) => {
 //user update DELETE
 router.delete("/user/:id", user_controller.user_delete)
 
+//subscribe form POST
+router.post('/subscriber', user_controller.subscriber);
+
 module.exports = router;

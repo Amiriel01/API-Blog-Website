@@ -42,13 +42,13 @@ export default function Article() {
     return (
         <>
             <div className="article-container">
-                <p className="article-info">{article.title}</p>
+                <p className="article-title">{article.title}</p>
                 {/* <p className="article-info">{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p> */}
                 <p className="article-info">{article.article_text}</p>
                 <div className="article-buttons">
                     <div id="comment-button">
                         <button type="submit" id="homepage-button comment-button">
-                            Comment
+                            Send a Comment
                         </button>
                     </div>
                     <Link to="/Homepage">

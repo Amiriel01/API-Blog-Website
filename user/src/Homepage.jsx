@@ -21,13 +21,25 @@ export default function Homepage() {
 
     return (
         <>
-            <div className="homepage-container">
+            <div className="homepage-top-container">
                 <div id="homepage-article-link-container">
                     <div id="homepage-article">
                         <p>{article.title}</p>
                     </div>
                 </div>
             </div>
+            <div className="homepage-mid-container">
+                <h3 id="homepage-mid-title">
+                    Stay Updated
+                </h3>
+                <h4 id="homepage-mid-info">
+                    Subscribe to recieve an email when new articles are posted.
+                </h4>
+                <form id="homepage-form">
+                    
+                </form>
+            </div>
+
         </>
     )
 }
