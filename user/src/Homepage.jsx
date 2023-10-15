@@ -1,5 +1,6 @@
 import React from "react";
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import moment from "moment"
 import axios from 'axios'
@@ -32,9 +33,11 @@ export default function Homepage() {
                     Read My Introduction Article Here
                 </h2>
                 <div id="homepage-article-link-container">
-                    <div id="homepage-article">
-                        <p>{article.title}</p>
-                    </div>
+                    <Link id="homepage-article-link" to="/HomepageArticle">
+                        <div id="homepage-article">
+                            <p>{article.title}</p>
+                        </div>
+                    </Link>
                 </div>
             </div>
             <div className="homepage-mid-container">

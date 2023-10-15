@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import moment from "moment"
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 
 export default function Homepage() {
 
@@ -21,7 +22,22 @@ export default function Homepage() {
 
     return (
         <>
-        
+            <div className="article-container">
+                <p className="article-title">{article.title}</p>
+                <p className="article-info">{article.article_text}</p>
+                <div className="article-buttons">
+                    <div id="comment-button">
+                        <button type="submit" id="homepage-button comment-button">
+                            Send a Comment
+                        </button>
+                    </div>
+                    <Link to="/Homepage">
+                        <button id="homepage-button">
+                            Return Home
+                        </button>
+                    </Link>
+                </div>
+            </div>
         </>
     )
 }
