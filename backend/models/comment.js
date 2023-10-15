@@ -39,7 +39,7 @@ const CommentSchema = new Schema({
         minLength: 1,
         maxLength: 250,
     },
-    is_published: {
+    published: {
        type: Boolean,
        default: false, 
     }
