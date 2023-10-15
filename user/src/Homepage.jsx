@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import moment from "moment"
 import axios from 'axios'
+import CreateSubscriber from "./CreateSubscriber";
 
 export default function Homepage() {
 
@@ -22,6 +23,9 @@ export default function Homepage() {
     return (
         <>
             <div className="homepage-top-container">
+                <h2 id="homepage-top-title">
+                    Read My Introduction Blog Here
+                </h2>
                 <div id="homepage-article-link-container">
                     <div id="homepage-article">
                         <p>{article.title}</p>
@@ -35,9 +39,12 @@ export default function Homepage() {
                 <h4 id="homepage-mid-info">
                     Subscribe to recieve an email when new articles are posted.
                 </h4>
-                <form id="homepage-form">
-                    
-                </form>
+                <div id="subscriber-form">
+                    <CreateSubscriber />
+                </div>
+            </div>
+            <div className="homepage-bot-container">
+                
             </div>
 
         </>
