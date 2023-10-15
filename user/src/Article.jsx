@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import moment from "moment"
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import axios from 'axios'
 
 export default function Article() {
     const { id } = useParams();
     const [article, setArticle] = useState({});
+    const { pathname } = useLocation();
 
     async function getArticle() {
         await axios.get(`http://localhost:3100/routers/article/${id}`).then((response) => {
@@ -38,6 +39,10 @@ export default function Article() {
             </div>
         </div>
     })
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [pathname]);
 
     return (
         <>

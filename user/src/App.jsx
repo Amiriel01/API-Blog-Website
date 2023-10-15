@@ -7,6 +7,7 @@ import Header from './Header';
 import AllArticles from './AllArticles';
 import SignUp from './SignUp';
 import Resources from './Resources';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/article/:id" element={<Article />} />
         </Routes>
       </div>
+      <Footer />
     </>
   )
 }

@@ -1,8 +1,5 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from "react";
-import moment from "moment"
-import axios from 'axios'
 
 export default function Header() {
     return (
