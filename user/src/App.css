@@ -79,7 +79,6 @@
   background-image: url(images/homepage-image2.png);
   background-size: cover;
   background-position: center;
-  /* background-size: 105%; */
   width: 40rem;
   height: 25rem;
   margin-left: auto;
@@ -150,6 +149,59 @@
 #subscribe-button:hover {
   background-color: #edb5bf;
   color: #6f6290;
+}
+
+.homepage-bot-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#articles-image-container {
+  background-image: url(images/homepage-blog-container-image.png);
+  background-size: cover;
+  background-position: center;
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#resource-image-container {
+  background-image: url(images/homepage-resources-conainer-image.png);
+  background-size: cover;
+  background-position: center;
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#portfolio-image-container {
+  background-image: url(images/homepage-portfolio-container-image.png);
+  background-size: cover;
+  background-position: center;
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#homepage-bot-title {
+  background-color: rgb(237, 181, 191);
+  width: 60%;
+  padding: .5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #5f6366;
 }
 
 .all-articles-container {

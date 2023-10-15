@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import moment from "moment"
 import axios from 'axios'
@@ -44,9 +44,28 @@ export default function Homepage() {
                 </div>
             </div>
             <div className="homepage-bot-container">
-                
+                <Link className="link" to="/AllArticles">
+                    <div id="articles-image-container">
+                        <div id="homepage-bot-title">
+                            <h3>All Articles</h3>
+                        </div>
+                    </div>
+                </Link>
+                <Link className="link" to="/Resources">
+                    <div id="resource-image-container">
+                        <div id="homepage-bot-title">
+                            <h3>Resources</h3>
+                        </div>
+                    </div>
+                </Link>
+                <a className="link" href="https://amiriel01.github.io/Portfolio-Template/" target="_blank">
+                    <div id="portfolio-image-container">
+                        <div id="homepage-bot-title">
+                            <h3>Portfolio</h3>
+                        </div>
+                    </div>
+                </a>
             </div>
-
         </>
     )
 }
