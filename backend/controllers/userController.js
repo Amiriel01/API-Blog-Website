@@ -87,7 +87,7 @@ exports.subscriber = [
             return;
         } else {
             //data is valid, save user
-            console.log(subscriber)
+            // console.log(subscriber)
             res.json(await subscriber.save())
         }
     })
