@@ -7,10 +7,22 @@ const { DateTime } = require("luxon");
 
 //create comment schema
 const CommentSchema = new Schema({
-    user: {
-        type: Schema.Types.ObjectId,
-        ref: "User",
+    // user: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: "User",
+    //     required: true,
+    // },
+    name: {
+        type: String,
         required: true,
+        minLength: 3,
+        maxLength: 20
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        match: /.+\@.+\..+/,
     },
     article: {
         type: Schema.Types.ObjectId,
@@ -24,7 +36,7 @@ const CommentSchema = new Schema({
     comment_text: {
         type: String,
         required: true,
-        minLenth: 1,
+        minLength: 1,
         maxLength: 250,
     }
 })

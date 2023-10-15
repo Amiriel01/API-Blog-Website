@@ -7,6 +7,14 @@ const article = require("../models/article");
 
 exports.comment_create = [
     //validate and sanitize fields
+    body("name", "Name cannot be blank.")
+        .trim()
+        .isLength({ min: 3 })
+        .isLength({ max: 20 })
+        .escape(),
+    body("email", "Email cannot be blank.")
+        .trim()
+        .escape(),
     body("comment_text", "Article cannot be blank.")
         .trim()
         .isLength({ min: 1 })
@@ -22,7 +30,9 @@ exports.comment_create = [
         //create article object with info
         const comment = new Comment({
             article: article,
-            user: user,
+            // user: user,
+            name: req.body.name,
+            email: req.body.email,
             comment_text: req.body.comment_text,
         });
         //when the errors are gone, render the form again with sanitized values and error messages
@@ -40,6 +50,14 @@ exports.comment_create = [
 
 exports.comment_update = [
     //validate and sanitize fields
+    body("name", "Name cannot be blank.")
+        .trim()
+        .isLength({ min: 3 })
+        .isLength({ max: 20 })
+        .escape(),
+    body("email", "Email cannot be blank.")
+        .trim()
+        .escape(),
     body("comment_text", "Article cannot be blank.")
         .trim()
         .isLength({ min: 1 })
