@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import moment from "moment"
 import axios from 'axios'
 import { Link } from 'react-router-dom';
+import CreateComment from "./CreateComment";
 
 export default function Homepage() {
 
@@ -27,12 +28,10 @@ export default function Homepage() {
                 <p className="article-info">{article.article_text}</p>
                 <div className="article-buttons">
                     <div id="comment-button">
-                        <button type="submit" id="homepage-button comment-button">
-                            Send a Comment
-                        </button>
+                        <CreateComment />
                     </div>
                     <Link to="/Homepage">
-                        <button id="homepage-button">
+                        <button id="home-button">
                             Return Home
                         </button>
                     </Link>

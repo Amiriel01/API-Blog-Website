@@ -323,3 +323,41 @@
   color: #6f6290;
   white-space: pre-wrap;
 }
+
+#comment-input-container {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #6f6290;
+  margin-bottom: 3rem;
+}
+
+#comment-input {
+  font-size: 1.5rem;
+  padding: .25rem;
+}
+
+#comment-textarea {
+  width: 39.5rem;
+  font-size: 1.5rem;
+  padding: .25rem;
+  height: 10rem;
+}
+
+#send-comment-button,
+#return-home-button {
+  font-size: 1.5rem;
+  padding: .25rem;
+  color: #a9d39e;
+  background-color: #6f6290;
+}
+
+#send-comment-button:hover,
+#return-home-button:hover {
+  background-color: #edb5bf;
+  color: #6f6290;
+}
+
+#send-comment-button {
+  margin-right: 2rem;
+}

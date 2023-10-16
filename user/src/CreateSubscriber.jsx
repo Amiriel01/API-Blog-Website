@@ -1,7 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, NavLink, Routes, useLocation } from 'react-router-dom';
-import { useEffect, useState } from "react";
-import App from "./App";
+import { useState } from "react";
 import axios from "axios";
 
 export default function CreateSubscriber() {
