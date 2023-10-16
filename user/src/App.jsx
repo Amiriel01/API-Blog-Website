@@ -5,7 +5,6 @@ import Homepage from './Homepage';
 import Article from './Article';
 import Header from './Header';
 import AllArticles from './AllArticles';
-import SignUp from './SignUp';
 import Resources from './Resources';
 import Footer from './Footer';
 import HomepageArticle from './HomepageArticle';
@@ -20,7 +19,6 @@ function App() {
           <Route path="/HomepageArticle" element={<HomepageArticle />} />
           <Route path="/AllArticles" element={<AllArticles />} />
           <Route path="/Resources" element={<Resources />} />
-          <Route path="/SignUp" element={<SignUp />} />
           <Route path="/article/:id" element={<Article />} />
         </Routes>
       </div>

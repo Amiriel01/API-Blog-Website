@@ -14,7 +14,7 @@ export default function Header() {
                 <div className="header-links">
                     <Link id="header-link" to="/AllArticles">All Articles</Link>
                     <Link id="header-link" to="/Resources">Resources</Link>
-                    <Link id="header-link" to="/SignUp">Sign Up</Link>
+                    <a id="header-link" href="https://amiriel01.github.io/Portfolio-Template/" target="_blank">Portfolio</a>
                 </div>
             </div>
         </>
