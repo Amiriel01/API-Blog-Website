@@ -21,6 +21,22 @@ export default function Homepage() {
         getArticle()
     }, []);
 
+    const commentComponent = article.comments?.map((comment) => {
+        if (comment.published === true) {
+            return <div id="ind-comment-card" key={comment._id}>
+                <div id="comment-flex-container">
+                    <p id="comment-name">{comment.name}</p>
+                    <p id="comment-timestamp">{moment(comment.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
+                </div>
+                <div id="comment-text-container">
+                    <p id="comment_text">{comment.comment_text}</p>
+                </div>
+            </div>
+        } else {
+            return "";
+        }
+    })
+
     return (
         <>
             <div className="article-container">
@@ -30,11 +46,10 @@ export default function Homepage() {
                     <div id="comment-button">
                         <CreateComment />
                     </div>
-                    <Link to="/Homepage">
-                        <button id="home-button">
-                            Return Home
-                        </button>
-                    </Link>
+                </div>
+                <div id="comment-card">
+                    <h4 id="reader-comments">Reader Comments</h4>
+                    <ul>{commentComponent}</ul>
                 </div>
             </div>
         </>
