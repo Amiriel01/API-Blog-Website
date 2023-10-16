@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import moment from "moment"
 import { useParams, useLocation } from "react-router-dom";
 import axios from 'axios'
+import CreateComment from "./CreateComment";
 
 export default function Article() {
     const { id } = useParams();
@@ -51,32 +52,11 @@ export default function Article() {
                 <p className="article-info">{article.article_text}</p>
                 <div className="article-buttons">
                     <div id="comment-button">
-                        <button type="submit" id="homepage-button comment-button">
-                            Send a Comment
-                        </button>
+                        <CreateComment />
                     </div>
-                    <Link to="/Homepage">
-                        <button id="homepage-button">
-                            Return Home
-                        </button>
-                    </Link>
-                    <ul>{commentComponent}</ul>
                 </div>
-
-                {/* <Link
-                    to={`/ArticleUpdate/${id}`}
-                    article={article}
-                >
-                    <button >
-                        Update Article
-                    </button>
-                </Link>
-                <Link to="/Homepage">
-                    <button onClick={handleDelete}>
-                        Delete Article
-                    </button>
-                </Link> */}
-            </div>
+                <ul>{commentComponent}</ul>
+            </div >
         </>
     )
 }
