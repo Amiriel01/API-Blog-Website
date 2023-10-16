@@ -31,14 +31,19 @@ export default function Article() {
     }, []);
 
     const commentComponent = article.comments?.map((comment) => {
-        return <div key={comment._id}>
-            <div id="comment-card">
-                <div id="comment-text">
-                    <p>{moment(comment.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
+        if (comment.published === true) {
+            return <div id="ind-comment-card" key={comment._id}>
+                <div id="comment-flex-container">
+                    <p id="comment-name">{comment.name}</p>
+                    <p id="comment-timestamp">{moment(comment.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
+                </div>
+                <div id="comment-text-container">
                     <p id="comment_text">{comment.comment_text}</p>
                 </div>
             </div>
-        </div>
+        } else {
+            return "";
+        }
     })
 
     useEffect(() => {
@@ -55,8 +60,11 @@ export default function Article() {
                         <CreateComment />
                     </div>
                 </div>
-                <ul>{commentComponent}</ul>
-            </div >
+                <div id="comment-card">
+                    <h4 id="reader-comments">Reader Comments</h4>
+                        <ul>{commentComponent}</ul>
+                </div>
+            </div>
         </>
     )
 }

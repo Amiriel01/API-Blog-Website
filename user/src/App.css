@@ -127,14 +127,14 @@
   margin-bottom: 1rem;
   margin-top: 2rem;
   text-align: center;
-  color:#6f6290;
+  color: #6f6290;
 }
 
 #homepage-mid-info {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   text-align: center;
-  color:#6f6290;
+  color: #6f6290;
 }
 
 #homepage-input-container {
@@ -208,7 +208,7 @@
 
 #articles-image-container:hover,
 #resource-image-container:hover,
-#portfolio-image-container:hover  {
+#portfolio-image-container:hover {
   transform: scale(1.1);
 }
 
@@ -296,7 +296,7 @@
   color: #6f6290;
 }
 
-.article-card:hover {  
+.article-card:hover {
   border: solid #6f6290 2px;
 }
 
@@ -360,4 +360,44 @@
 
 #send-comment-button {
   margin-right: 2rem;
+}
+
+#comment-card {
+  width: 40rem;
+  margin-left: 18rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+#reader-comments {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #6f6290;
+  margin-bottom: 2rem;
+}
+
+#ind-comment-card {
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #6f6290
+}
+
+#comment-flex-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+#comment-name {
+  margin-right: 15rem;
+  font-weight: bold;
+  color: #6f6290;
+}
+
+#comment_text,
+#comment-timestamp {
+  color: #5f6366;
+}
+
+#comment_text {
+  margin-bottom: 1rem;
 }
