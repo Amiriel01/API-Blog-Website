@@ -212,13 +212,6 @@
   transform: scale(1.1);
 }
 
-/* #articles-image-container:active,
-#resource-image-container:active,
-#portfolio-image-container:active  {
-  border: 5px solid #a9d39e;
-} */
-
-
 #homepage-bot-title {
   background-color: rgb(237, 181, 191);
   width: 60%;
@@ -270,7 +263,7 @@
   display: flex;
   flex-direction: column;
   padding-left: 3rem;
-  padding-top: 4rem;
+  padding-top: 3rem;
 }
 
 .footer-link {
@@ -283,6 +276,7 @@
   color: rgb(231, 107, 130);
 }
 
+/*AllArticle Page*/
 .all-articles-container {
   display: flex;
   justify-content: space-around;
@@ -308,13 +302,9 @@
 
 .link {
   text-decoration: none;
-  color: blueviolet;
 }
 
-.link:visited {
-  color: blueviolet;
-}
-
+/*Article and HomepageArticle Pages*/
 .article-title {
   margin-top: 3rem;
   text-align: center;
