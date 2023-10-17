@@ -48,8 +48,13 @@ label,
   text-decoration: underline;
 }
 
+#article-text {
+  font-size: 1.5rem;
+}
+
 .article-info  {
   font-size: 1.25rem;
+  text-align: left;
 }
 
 input,
@@ -77,12 +82,13 @@ height: 20rem;
 }
 
 .article-container {
-  width: 30%;
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
   text-align: center;
+  white-space: pre-wrap;
 }
 
 .article-buttons {
@@ -130,5 +136,11 @@ button:active {
   justify-content: space-between;
   align-items: center;
 }
+
+.delete-button,
+.publish-button {
+  width: 6.5rem;
+}
+
 
 

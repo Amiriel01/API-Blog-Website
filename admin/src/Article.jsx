@@ -44,6 +44,15 @@ export default function Article() {
         // article.comments.splice(article.comments.indexOf(), 1)
     }
 
+    // async function handlePublishButton(comment) {
+    //     console.log(comment.id)
+    //     if (comment.publish === false) {
+    //         comment.publish = true;
+    //     } else {
+    //         comment.publish = false;
+    //     }
+    // }
+
     useEffect(() => {
         getArticle()
     }, []);
@@ -52,15 +61,23 @@ export default function Article() {
         return <div key={comment._id}>
             <div id="comment-card">
                 <div id="comment-text">
+                    <p>{comment.name}</p>
                     <p>{moment(comment.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
                     <p id="comment_text">{comment.comment_text}</p>
                 </div>
-                <div id="comment-button">
-                    <button onClick={() => handleDeleteButton(comment)}
-                    
-                    type="submit" id="homepage-button delete-button">
-                        Delete
-                    </button>
+                <div id="comment-buttons-container">
+                    {/* <div id="comment-button">
+                        <button onClick={() => handlePublishButton(comment)}
+                            type="submit" id="homepage-button" className="publish-button">
+                            Publish
+                        </button>
+                    </div> */}
+                    <div id="comment-button">
+                        <button onClick={() => handleDeleteButton(comment)}
+                            type="submit" id="homepage-button" className="delete-button">
+                            Delete
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -71,9 +88,9 @@ export default function Article() {
             <h1 className="page-title">Article Review</h1>
             <div className="article-container">
                 <h2 id="article-title"> Title: </h2>
-                <p className="article-info">{article.title}</p>
+                <p id="article-text">{article.title}</p>
                 <h2 id="article-title"> Timestamp: </h2>
-                <p className="article-info">{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
+                <p id="article-text">{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
                 <h2 id="article-title"> Article Text: </h2>
                 <p className="article-info">{article.article_text}</p>
                 <h2 id="article-title"> Article Comments: </h2>

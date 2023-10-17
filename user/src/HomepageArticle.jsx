@@ -1,14 +1,15 @@
 import React from "react";
-import { NavLink } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import moment from "moment"
 import axios from 'axios'
 import { Link } from 'react-router-dom';
-import CreateComment from "./CreateComment";
+import CreateHomepageArticleComment from "./createHomepageArticleComment";
 
 export default function Homepage() {
 
     const [article, setArticle] = useState({});
+    const { id } = useParams();
 
     async function getArticle() {
         await axios.get(`http://localhost:3100/routers/article/652afa5821b153b3f4a772dc`).then((response) => {
@@ -44,7 +45,7 @@ export default function Homepage() {
                 <p className="article-info">{article.article_text}</p>
                 <div className="article-buttons">
                     <div id="comment-button">
-                        <CreateComment />
+                        <CreateHomepageArticleComment />
                     </div>
                 </div>
                 <div id="comment-card">
