@@ -33,7 +33,7 @@ export default function AllArticles() {
                         className="link"
                         >
                         <div className="article-card" >
-                            <h2 id="article-info">{article.title}</h2>
+                            <h2 id="article-info-title">{article.title}</h2>
                             {/* <p id="article-info">{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p> */}
                             <p id="article-info">{article.article_text}</p>
                             {/* <p>{article.comments}</p> */}

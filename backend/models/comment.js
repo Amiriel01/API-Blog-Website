@@ -21,7 +21,6 @@ const CommentSchema = new Schema({
     email: {
         type: String,
         required: true,
-        unique: true,
         match: /.+\@.+\..+/,
     },
     article: {

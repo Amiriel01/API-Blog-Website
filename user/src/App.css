@@ -296,6 +296,10 @@
   color: #6f6290;
 }
 
+#article-info-title {
+  margin-bottom: 1rem;
+}
+
 .article-card:hover {
   border: solid #6f6290 2px;
 }

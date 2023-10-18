@@ -89,18 +89,6 @@ export default function Article() {
     return (
         <>
             <h1 className="page-title">Article Review</h1>
-            <div className="article-container">
-                <h2 id="article-title"> Title: </h2>
-                <p id="article-text">{article.title}</p>
-                <h2 id="article-title"> Timestamp: </h2>
-                <p id="article-text">{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
-                <h2 id="article-title"> Article Text: </h2>
-                <p className="article-info">{article.article_text}</p>
-                <h2 id="article-title"> Article Comments: </h2>
-                <div className="comment-container" key={commentRerender}>
-                    {commentComponent}
-                </div>
-            </div>
             <div className="article-buttons">
                 <Link to="/Homepage">
                     <button id="homepage-button">
@@ -120,6 +108,18 @@ export default function Article() {
                         Delete Article
                     </button>
                 </Link>
+            </div>
+            <div className="article-container">
+                <h2 id="article-title"> Title: </h2>
+                <p id="article-text">{article.title}</p>
+                <h2 id="article-title"> Timestamp: </h2>
+                <p id="article-text">{moment(article.timestamp).format('MMMM Do YYYY, h:mm a')}</p>
+                <h2 id="article-title"> Article Text: </h2>
+                <p className="article-info">{article.article_text}</p>
+                <h2 id="article-title"> Article Comments: </h2>
+                <div className="comment-container" key={commentRerender}>
+                    {commentComponent}
+                </div>
             </div>
         </>
     )
