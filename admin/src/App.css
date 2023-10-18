@@ -1,5 +1,5 @@
 body {
-  background-color: lightblue;
+  background-color: #e6def5;
 }
 
 #homepage-header-container {
@@ -14,7 +14,7 @@ body {
 }
 
 .article-card {
-  border: solid darkblue 2px;
+  border: solid #6f6290 2px;
   width: 25rem;
   height: 10rem;
   margin-bottom: 2rem;
@@ -26,11 +26,11 @@ body {
 
 .link {
   text-decoration: none;
-  color: blue;
+  color: #361688;
 }
 
 .link:visited {
-  color: blue;
+  color: #361688;
 }
 
 .page-title {
@@ -59,7 +59,7 @@ label,
 
 input,
 textarea {
-  border: solid darkblue 2px;
+  border: solid #361688 2px;
   font-size: 1.25rem;
   margin-bottom: 1rem;
   background-color: aliceblue;
@@ -101,7 +101,7 @@ button {
   padding: .5rem;
   font-size: 1.5rem;
   background-color: aliceblue;
-  border: solid darkblue 2px;
+  border: solid #361688 2px;
   color: black;
   font-weight: bold;
   margin-right: 2rem;
@@ -109,13 +109,13 @@ button {
 
 button:hover {
   color: aliceblue;
-  background-color: darkblue;
+  background-color: #361688;
 }
 
 button:active {
   background-color: aliceblue;
-  border: solid darkblue 2px;
-  color: darkblue;
+  border: solid #361688 2px;
+  color: #361688;
 }
 
 #update-button-container {
@@ -139,7 +139,7 @@ button:active {
 
 .delete-button,
 .publish-button {
-  width: 6.5rem;
+  width: 9rem;
 }
 
 
