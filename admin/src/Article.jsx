@@ -1,12 +1,10 @@
 import React from "react";
-import { BrowserRouter, Route, Link, NavLink, Routes, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
-import App from "./App";
 import moment from "moment"
 import { useParams } from "react-router-dom";
 import axios from 'axios'
-import ArticleUpdate from "./ArticleUpdate";
-// import comment from "../../backend/models/comment";
+
 
 export default function Article() {
     const { id } = useParams();
@@ -31,12 +29,11 @@ export default function Article() {
     //omit if not used
 
     async function handlePublishButton(comment) {
-        await axios.put(`http://localhost:3100/routers/article/${id}/comment/${comment._id}`).then((response) => {
+        await axios.put(`http://localhost:3100/routers/article/${id}/comment/${comment._id}`, comment).then((response) => {
             console.log(response)
             comment.published = !comment.published
             setUpdateComment(response.data)
         })
-        
     }
 
     //use this for non-async
@@ -73,7 +70,7 @@ export default function Article() {
                         <div>
                             <button onClick={() => handlePublishButton(comment)}
                                 type="submit" id="homepage-button" className="publish-button">
-                                Publish
+                                {comment.published ?"Publish" : "Unpublish"}
                             </button>
                         </div>
                     </div>

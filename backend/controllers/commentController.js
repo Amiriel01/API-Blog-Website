@@ -71,12 +71,12 @@ exports.comment_update = [
         //when the errors are gone, render the form again with sanitized values and error messages
         if (!errors.isEmpty()) {
             //get comment info from the form
-            res.json("Console.log for errors");
-            console.log(comment_update)
-            return;
+            // res.json("Console.log for errors");
+            // console.log(comment_update)
+            return res.json(errors)
         } else {
             //update the comment
-            const commentUpdate = await Comment.findByIdAndUpdate(req.body._id, { comment_text: req.body.comment_text }).exec()
+            const commentUpdate = await Comment.findByIdAndUpdate(req.body._id, { comment_text: req.body.comment_text, published: req.body.published }).exec()
             //data from form is valid, save article
             return res.json(commentUpdate)
         }
