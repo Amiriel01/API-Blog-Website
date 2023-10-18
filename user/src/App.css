@@ -363,10 +363,13 @@
 }
 
 #comment-card {
-  width: 40rem;
-  margin-left: 18rem;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 2rem;
   font-size: 1.5rem;
+  border-top: double #6f6290 5px;
+  padding-top: 2rem;
 }
 
 #reader-comments {
