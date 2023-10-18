@@ -13,7 +13,7 @@ export default function Homepage() {
 
     async function getArticle() {
         await axios.get(`http://localhost:3100/routers/article/652afa5821b153b3f4a772dc`).then((response) => {
-            // console.log(response)
+            console.log(response.data)
             setArticle(response.data);
         });
     }

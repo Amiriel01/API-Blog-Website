@@ -29,9 +29,10 @@ export default function Article() {
     //omit if not used
 
     async function handlePublishButton(comment) {
+        console.log(comment.published)
+        comment.published = !comment.published
         await axios.put(`http://localhost:3100/routers/article/${id}/comment/${comment._id}`, comment).then((response) => {
-            console.log(response)
-            comment.published = !comment.published
+            console.log(comment.published)
             setUpdateComment(response.data)
         })
     }
@@ -49,7 +50,7 @@ export default function Article() {
             await axios.delete(`http://localhost:3100/routers/article/${id}/comment/${comment._id}`)
         } catch { }
         setCommentRerender(commentRerender + 1)
-        // article.comments.splice(article.comments.indexOf(), 1)
+        article.comments.splice(article.comments.indexOf(comment), 1)
     }
 
 
@@ -70,7 +71,7 @@ export default function Article() {
                         <div>
                             <button onClick={() => handlePublishButton(comment)}
                                 type="submit" id="homepage-button" className="publish-button">
-                                {comment.published ?"Publish" : "Unpublish"}
+                                {comment.published ?"Unpublish" : "Publish"}
                             </button>
                         </div>
                     </div>

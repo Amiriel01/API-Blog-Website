@@ -76,6 +76,7 @@ exports.comment_update = [
             return res.json(errors)
         } else {
             //update the comment
+            console.log(req.body)
             const commentUpdate = await Comment.findByIdAndUpdate(req.body._id, { comment_text: req.body.comment_text, published: req.body.published }).exec()
             //data from form is valid, save article
             return res.json(commentUpdate)
