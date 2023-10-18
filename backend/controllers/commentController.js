@@ -72,6 +72,7 @@ exports.comment_update = [
         if (!errors.isEmpty()) {
             //get comment info from the form
             res.json("Console.log for errors");
+            console.log(comment_update)
             return;
         } else {
             //update the comment

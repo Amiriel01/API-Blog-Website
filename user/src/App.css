@@ -378,7 +378,7 @@
 
 #ind-comment-card {
   margin-bottom: 2rem;
-  border-bottom: 2px solid #6f6290
+  border-bottom: 2px solid #6f6290;
 }
 
 #comment-flex-container {
@@ -400,4 +400,48 @@
 
 #comment_text {
   margin-bottom: 1rem;
+}
+
+/*Resources Page*/
+#resources-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #6f6290;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+#resource-container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#resources-subtitle {
+  color: #6f6290;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-decoration: underline;
+  margin-top: 2rem;
+}
+
+#resource-name {
+  color: #6f6290;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+#resource-name {
+  color: #6f6290;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+#resource-paragraph {
+  margin-bottom: 1rem;
+  color: #5f6366;
 }

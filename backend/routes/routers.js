@@ -29,7 +29,7 @@ router.post("/article/:id/comment", comment_controller.comment_create)
 //comment update PUT
 router.put("/article/:id/comment/:id", comment_controller.comment_update);
 
-//delete comment id needed
+//comment DELETE
 router.delete("/article/:id/comment/:commentId", comment_controller.comment_delete);
 
 
