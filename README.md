@@ -1,6 +1,6 @@
 **Objective**
 
-I created a full stack blog website. This project has a monorepo with two frontend React/Vite sites and a backend that uses Express, MongoDB, and Mongoose. 
+I created a full stack blog website. This project has a monorepo with two frontend React/Vite sites and a backend that uses Express, MongoDB, Postman, and Mongoose.
 
 **React User Frontend Website**
 
@@ -75,6 +75,9 @@ On the article detail page I am given the option to read, update, and delete the
 ![](images/adminarticledetail.png)
 ![](images/adminarticledetail2.png)
 
+**The Backend Site**
+
+The backend was created using Express. I created routes, controllers, and models to use with the MongoDB database and in my API calls from the React frontend websites.
 
 
 ***Credits***
